@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Obrazovka – Café Pilates</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #000; cursor: none; }
+    .slides { position: relative; width: 100%; height: 100%; }
+    .slides img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      -webkit-transition: opacity 5s ease;
+      transition: opacity 5s ease;
+    }
+    .slides img.is-active { opacity: 1; }
+  </style>
+</head>
+<body>
+  <!--
+    OBRAZOVKA V KAVÁRNĚ
+    Obrázky jsou na výšku 2160 × 3840 px (poměr 9 : 16).
+    Každý se ukazuje 8 sekund, prolnutí do dalšího trvá 5 sekund.
+
+    Přidání obrázku: nahrajte ho do složky assets/img/obrazovka/ a přidejte níže řádek <img>.
+    Odebrání: smažte jeho řádek. Pořadí řádků = pořadí na obrazovce.
+  -->
+  <div class="slides">
+    <img src="assets/img/obrazovka/polevky-121026.jpg" alt="">
+    <img src="assets/img/obrazovka/tv-menu-01.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-02.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-03.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-04.png" alt="">
+    <img src="assets/img/obrazovka/obrazovka--3.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--4.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--6.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--7.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--8.jpg" alt="">
+    <img src="assets/img/obrazovka/9.jpg" alt="">
+    <img src="assets/img/obrazovka/11.jpg" alt="">
+    <img src="assets/img/obrazovka/10.jpg" alt="">
+    <img src="assets/img/obrazovka/14.jpg" alt="">
+    <img src="assets/img/obrazovka/12.jpg" alt="">
+    <img src="assets/img/obrazovka/barre.jpg" alt="">
+    <img src="assets/img/obrazovka/happy-hours.jpg" alt="">
+  </div>
+
+  <script>
+    (function () {
+      var PRODLEVA = 8000; // ms mezi obrázky (stejně jako dřív ve Webflow)
+      var slides = document.querySelectorAll(".slides img");
+      var i = 0;
+      if (!slides.length) return;
+      slides[0].className = "is-active";
+      if (slides.length < 2) return;
+      setInterval(function () {
+        slides[i].className = "";
+        i = (i + 1) % slides.length;
+        slides[i].className = "is-active";
+      }, PRODLEVA);
+    })();
+  </script>
+</body>
+</html>
