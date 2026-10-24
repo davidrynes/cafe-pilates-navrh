@@ -38,7 +38,7 @@ Adresy fungují i bez `.html` – GitHub Pages servíruje `menu.html` i na `/men
 
 **Ceny** – `rozvrh-a-cenik.html` (ceník) a v `index.html` „Ceník v kostce“. Při změně upravte obě místa.
 
-**Lektorky** – `instruktorky.html`. Každá lektorka je jeden blok `<article … id="…">`. Fotky patří do `assets/img/lektorky/`, ideálně na výšku 600 × 1000 px. Dokud fotka chybí, použijte `silueta.svg`. Řada fotek na úvodní stránce je v `index.html` (sekce „Náš tým“).
+**Lektorky** – `instruktorky.html`. Každá lektorka je jeden blok `<article … id="…">`. Fotky jsou v `assets/img/lektorky/` jako čtverce 720 × 720 px v rámečku s lístky a logem na bílém pozadí (stejně jako původní grafiky). Bílé pozadí na webu splyne se světlou kartou. Lektorka bez fotky má zatím siluetu v rámečku (`veronika-l.webp`). Řada fotek na úvodní stránce je v `index.html` (sekce „Náš tým“).
 
 **Obrazovka v kavárně** – `obrazovka.html`. Obrázky na výšku 2160 × 3840 px nahrajte do `assets/img/obrazovka/` a přidejte řádek `<img>`; pořadí řádků = pořadí na obrazovce. Každý obrázek svítí 8 s, prolnutí trvá 5 s.
 
