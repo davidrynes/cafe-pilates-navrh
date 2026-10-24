@@ -45,6 +45,19 @@
   }
   var dnes = DNY[(new Date().getDay() + 6) % 7];
 
+  // Profil může být jedno id, nebo seznam, když se lektorky střídají ("Eva / Helena")
+  function profily(l) {
+    return Array.isArray(l.profil) ? l.profil : [l.profil || null];
+  }
+  function lektorkyHtml(l) {
+    var jmena = String(l.lektorka).split(" / ");
+    var ids = profily(l);
+    return jmena.map(function (jm, i) {
+      var id = ids.length === jmena.length ? ids[i] : ids[0];
+      return id ? '<a href="instruktorky.html#' + esc(id) + '">' + esc(jm) + "</a>" : esc(jm);
+    }).join(" / ");
+  }
+
   // Týdenní přehled: <div data-rozvrh-sal="velky"></div>
   each($$("[data-rozvrh-sal]"), function (box) {
     var sal = box.getAttribute("data-rozvrh-sal");
@@ -53,10 +66,7 @@
       var dne = lekce.filter(function (l) { return l.den === den; });
       var cls = "day" + (den === dnes ? " is-today" : "") + (dne.length ? "" : " day--empty");
       var obsah = dne.length ? dne.map(function (l) {
-        var kdo = l.profil
-          ? '<a href="instruktorky.html#' + esc(l.profil) + '">' + esc(l.lektorka) + "</a>"
-          : esc(l.lektorka);
-        return '<div class="lesson"><b>' + esc(l.cas) + "</b><span>" + esc(l.lekce) + "</span><small>" + kdo + "</small></div>";
+        return '<div class="lesson"><b>' + esc(l.cas) + "</b><span>" + esc(l.lekce) + "</span><small>" + lektorkyHtml(l) + "</small></div>";
       }).join("") : '<p class="day__empty">Bez lekcí</p>';
       return '<section class="' + cls + '"><h3>' + DNY_NAZEV[den] + (den === dnes ? " <small>dnes</small>" : "") + "</h3>" + obsah + "</section>";
     }).join("");
@@ -67,11 +77,22 @@
   // Kdy cvičí: <div class="when" data-rozvrh-lektorka="helena" hidden><h4>…</h4><ul></ul></div>
   each($$("[data-rozvrh-lektorka]"), function (box) {
     var id = box.getAttribute("data-rozvrh-lektorka");
-    var lekce = rozvrh.filter(function (l) { return l.profil === id; }).sort(serad);
+    var lekce = rozvrh.filter(function (l) { return profily(l).indexOf(id) !== -1; }).sort(serad);
     if (!lekce.length) return;
-    $("ul", box).innerHTML = lekce.map(function (l) {
-      return "<li><b>" + DNY_ZKR[l.den] + " " + esc(l.cas) + "</b><span>" + esc(l.lekce) +
-        " <small>· " + SALY[l.sal] + "</small></span></li>";
+    // seskupit po dnech: „Út  7:00 Reformer, 15:00 Pilates barre…“
+    var poDnech = {};
+    lekce.forEach(function (l) {
+      var ids = profily(l);
+      var nazev = l.lekce;
+      // u střídaného typu lekce („Chair / Reformer (fyzio)“) ukázat jen ten, který vede tahle lektorka
+      var typy = String(l.lekce).split(" / ");
+      if (typy.length === ids.length) nazev = typy[ids.indexOf(id)];
+      nazev = nazev.replace(" (authentic)", "");
+      var txt = esc(l.cas) + " " + esc(nazev) + (ids.length > 1 ? " <small>(střídavě)</small>" : "");
+      (poDnech[l.den] = poDnech[l.den] || []).push(txt);
+    });
+    $("ul", box).innerHTML = DNY.filter(function (d) { return poDnech[d]; }).map(function (d) {
+      return "<li><b>" + DNY_ZKR[d] + "</b><span>" + poDnech[d].join(", ") + "</span></li>";
     }).join("");
     box.hidden = false;
   });

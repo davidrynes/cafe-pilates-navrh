@@ -634,7 +634,8 @@ html:not(.js) .filters--js { display: none; }
 .certs summary { color: var(--muted); }
 .when ul { display: grid; gap: 6px; margin-top: 10px; }
 .when li { display: flex; gap: 12px; font-size: .95rem; }
-.when b { flex: none; min-width: 82px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.when b { flex: none; min-width: 34px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.when li span { line-height: 1.5; }
 .when small { color: var(--muted); font-size: .82rem; }
 .when a { color: var(--primary); }
 
