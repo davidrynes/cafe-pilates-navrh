@@ -92,7 +92,10 @@
           <p class="lead">Vyberte si lekci, vytvořte si profil a&nbsp;zaplaťte kartou. Na každou lekci si můžete rezervovat jedno místo.</p>
         </div>
         <div class="booking">
-          <script type="text/javascript" src="https://bookeo.com/widget.js?a=42552ELM9K9198556A4979&amp;agc=false"></script>
+          <p class="booking__loading muted">Načítám rezervační systém… Pokud se nezobrazí, zavolejte nám na <a href="tel:+420608867232">+420&nbsp;608&nbsp;867&nbsp;232</a>.</p>
+          <div id="bookeo_position"></div>
+          <!-- Bookeo se načítá asynchronně, aby pomalá odpověď jeho serveru nezastavila zbytek stránky -->
+          <script async src="https://bookeo.com/widget.js?a=42552ELM9K9198556A4979&amp;agc=false"></script>
         </div>
       </div>
     </section>

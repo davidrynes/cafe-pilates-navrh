@@ -1160,3 +1160,4 @@ html:not(.js) .filters--js { display: none; }
 .simple-list li > div { display: grid; gap: 2px; }
 .simple-list li > div br { display: none; }
 .tiles--2 .frame { aspect-ratio: 1; }
+.booking:has(iframe) .booking__loading { display: none; }
