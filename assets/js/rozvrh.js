@@ -23,7 +23,7 @@ window.ROZVRH = [
   { den: "po", cas: "16:00", sal: "velky", lekce: "Spine corrector – Pilates level I – zaměřeno na záda", lektorka: "Dana D.", profil: "dana" },
   { den: "po", cas: "17:00", sal: "velky", lekce: "SM systém", lektorka: "Veronika", profil: "veronika" },
   { den: "po", cas: "18:00", sal: "velky", lekce: "Pilates level I – začátečníci", lektorka: "Jana", profil: "jana" },
-  { den: "po", cas: "19:00", sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R." },
+  { den: "po", cas: "19:00", sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R.", profil: "kristyna-r" },
 
   { den: "ut", cas: "8:00",  sal: "velky", lekce: "Pilates barre", lektorka: "Kateřina R.", profil: "katerina" },
   { den: "ut", cas: "9:00",  sal: "velky", lekce: "Pilates barre", lektorka: "Kateřina R.", profil: "katerina" },
@@ -42,7 +42,7 @@ window.ROZVRH = [
   { den: "st", cas: "19:00", sal: "velky", lekce: "Power jóga", lektorka: "Dana D.", profil: "dana" },
 
   { den: "ct", cas: "8:00",  sal: "velky", lekce: "Pilates level I – zaměřeno na záda", lektorka: "Helena", profil: "helena" },
-  { den: "ct", cas: "9:00",  sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R." },
+  { den: "ct", cas: "9:00",  sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R.", profil: "kristyna-r" },
   { den: "ct", cas: "10:00", sal: "velky", lekce: "Bodystyling & baby", lektorka: "Karolína", profil: "karolina" },
   { den: "ct", cas: "17:00", sal: "velky", lekce: "Pilates barre", lektorka: "Helena / Zuzka B.", profil: ["helena", null] },
   { den: "ct", cas: "18:00", sal: "velky", lekce: "Spine corrector – Pilates level II", lektorka: "Tereza Č.", profil: "tereza-c" },
@@ -60,7 +60,7 @@ window.ROZVRH = [
 
   { den: "ne", cas: "8:30",  sal: "velky", lekce: "Bodystyling & baby", lektorka: "Karolína", profil: "karolina" },
   { den: "ne", cas: "9:45",  sal: "velky", lekce: "Bodystyling & baby", lektorka: "Karolína", profil: "karolina" },
-  { den: "ne", cas: "11:00", sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R." },
+  { den: "ne", cas: "11:00", sal: "velky", lekce: "Pilates barre", lektorka: "Kristýna R.", profil: "kristyna-r" },
   { den: "ne", cas: "18:00", sal: "velky", lekce: "Pilates barre", lektorka: "Terka", profil: "terka" },
   { den: "ne", cas: "19:00", sal: "velky", lekce: "Pilates level II – pokročilí", lektorka: "Veronika L. / Mirka", profil: ["veronika-l", "mirka"] },
 
@@ -71,14 +71,14 @@ window.ROZVRH = [
   { den: "po", cas: "12:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Žofie", profil: "zofie" },
   { den: "po", cas: "13:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Žofie", profil: "zofie" },
   { den: "po", cas: "14:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika", profil: "veronika" },
-  { den: "po", cas: "15:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika / Kristýna R.", profil: ["veronika", null] },
-  { den: "po", cas: "16:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika / Kristýna R.", profil: ["veronika", null] },
-  { den: "po", cas: "17:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R." },
+  { den: "po", cas: "15:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika / Kristýna R.", profil: ["veronika", "kristyna-r"] },
+  { den: "po", cas: "16:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika / Kristýna R.", profil: ["veronika", "kristyna-r"] },
+  { den: "po", cas: "17:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R.", profil: "kristyna-r" },
 
   { den: "ut", cas: "7:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
-  { den: "ut", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", null] },
-  { den: "ut", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", null] },
-  { den: "ut", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", null] },
+  { den: "ut", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", "kristyna-r"] },
+  { den: "ut", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", "kristyna-r"] },
+  { den: "ut", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D. / Kristýna R.", profil: ["dana", "kristyna-r"] },
   { den: "ut", cas: "15:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
   { den: "ut", cas: "16:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Dana D.", profil: "dana" },
   { den: "ut", cas: "17:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
@@ -96,8 +96,8 @@ window.ROZVRH = [
   { den: "st", cas: "20:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
 
   { den: "ct", cas: "7:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
-  { den: "ct", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R." },
-  { den: "ct", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", null] },
+  { den: "ct", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R.", profil: "kristyna-r" },
+  { den: "ct", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", "kristyna-r"] },
   { den: "ct", cas: "12:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Zuzka", profil: "zuzka" },
   { den: "ct", cas: "13:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Zuzka", profil: "zuzka" },
   { den: "ct", cas: "14:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika / Dana D.", profil: ["veronika", "dana"] },
@@ -108,8 +108,8 @@ window.ROZVRH = [
   { den: "ct", cas: "19:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika L.", profil: "veronika-l" },
 
   { den: "pa", cas: "7:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
-  { den: "pa", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", null] },
-  { den: "pa", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", null] },
+  { den: "pa", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", "kristyna-r"] },
+  { den: "pa", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena / Kristýna R.", profil: ["helena", "kristyna-r"] },
   { den: "pa", cas: "11:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika", profil: "veronika" },
   { den: "pa", cas: "12:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Veronika", profil: "veronika" },
   { den: "pa", cas: "14:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Žofie", profil: "zofie" },
@@ -120,9 +120,9 @@ window.ROZVRH = [
 
   { den: "so", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Helena", profil: "helena" },
 
-  { den: "ne", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R." },
-  { den: "ne", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R." },
-  { den: "ne", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R." },
+  { den: "ne", cas: "8:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R.", profil: "kristyna-r" },
+  { den: "ne", cas: "9:00",  sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R.", profil: "kristyna-r" },
+  { den: "ne", cas: "10:00", sal: "reformery", lekce: "Reformer (authentic)", lektorka: "Kristýna R.", profil: "kristyna-r" },
   { den: "ne", cas: "16:00", sal: "reformery", lekce: "Chair (authentic) / Reformer (fyzio)", lektorka: "Veronika L. / Mirka", profil: ["veronika-l", "mirka"] },
   { den: "ne", cas: "17:00", sal: "reformery", lekce: "Chair (authentic) / Reformer (fyzio)", lektorka: "Veronika L. / Mirka", profil: ["veronika-l", "mirka"] },
   { den: "ne", cas: "18:00", sal: "reformery", lekce: "Reformer (authentic) / Reformer (fyzio)", lektorka: "Veronika L. / Mirka", profil: ["veronika-l", "mirka"] }
