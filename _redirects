@@ -1,0 +1,22 @@
+# Netlify: trvalá přesměrování starých adres z Webflow na nové stránky.
+# „301!“ = přesměrovat, i když na staré adrese leží soubor (záložní přesměrovací stránky).
+# Stránky /obrazovka a /cafe-pilates-obrazovka se nepřesměrovávají.
+
+/cafe-pilates-l-jidelni-a-napojovy-listek                                                               /menu.html                                301!
+/cafe-pilates-l-jidelni-a-napojovy-listek.html                                                          /menu.html                                301!
+/cafe-pilates-l-co-je-pilates-cviceni-a-pro-koho-je                                                     /pilates.html                             301!
+/cafe-pilates-l-co-je-pilates-cviceni-a-pro-koho-je.html                                                /pilates.html                             301!
+/cafe-pilates-l-rezervace-cviceni-pilates                                                               /rozvrh-a-cenik.html                      301!
+/cafe-pilates-l-rezervace-cviceni-pilates.html                                                          /rozvrh-a-cenik.html                      301!
+/cafe-pilates-l-soukrome-oslavy-praha-letnany                                                           /oslavy.html                              301!
+/cafe-pilates-l-soukrome-oslavy-praha-letnany.html                                                      /oslavy.html                              301!
+/cafe-pilates-l-vernisaze-a-vystavy                                                                     /vystavy.html                             301!
+/cafe-pilates-l-vernisaze-a-vystavy.html                                                                /vystavy.html                             301!
+/cafe-pilates-l-kde-jsme                                                                                /kontakt.html                             301!
+/cafe-pilates-l-kde-jsme.html                                                                           /kontakt.html                             301!
+/cafe-pilates-l-souhlas-se-zpracovanim-osobnich-udaju                                                   /ochrana-osobnich-udaju.html              301!
+/cafe-pilates-l-souhlas-se-zpracovanim-osobnich-udaju.html                                              /ochrana-osobnich-udaju.html              301!
+/cafe-pilates-l-bistro-lagoon-letnany                                                                   /                                         301!
+/cafe-pilates-l-bistro-lagoon-letnany.html                                                              /                                         301!
+/blog/cafe-pilates-l-elixir-prodlouzene-mladosti-ponorte-se-do-zazracneho-sveta-telesne-harmonie        /blog/elixir-prodlouzeneho-mladi.html     301!
+/blog/cafe-pilates-l-elixir-prodlouzene-mladosti-ponorte-se-do-zazracneho-sveta-telesne-harmonie.html   /blog/elixir-prodlouzeneho-mladi.html     301!

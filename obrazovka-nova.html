@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Obrazovka – Café Pilates</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #000; cursor: none; }
+    .slides { position: relative; width: 100%; height: 100%; }
+    .slides img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      -webkit-transition: opacity 5s ease;
+      transition: opacity 5s ease;
+    }
+    .slides img.is-active { opacity: 1; }
+  </style>
+</head>
+<body>
+  <!--
+    OBRAZOVKA V KAVÁRNĚ
+    Obrázky jsou na výšku 2160 × 3840 px (poměr 9 : 16).
+    Každý se ukazuje 8 sekund, prolnutí do dalšího trvá 5 sekund.
+
+    POLÉVKY KAŽDÝ TÝDEN: na GitHubu otevřete složku assets/img/obrazovka/, nahrajte nový obrázek
+    pojmenovaný přesně „polevky.jpg“ (přepíše starý) a uložte. Obrazovka si ho sama načte do 30 minut,
+    tento soubor není potřeba upravovat.
+
+    Další obrázky: nahrajte je do složky assets/img/obrazovka/ a přidejte níže řádek <img>.
+    Odebrání: smažte jeho řádek. Pořadí řádků = pořadí na obrazovce.
+  -->
+  <div class="slides">
+    <img id="polevky" src="assets/img/obrazovka/polevky.jpg" alt="">
+    <img src="assets/img/obrazovka/tv-menu-01.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-02.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-03.png" alt="">
+    <img src="assets/img/obrazovka/tv-menu-04.png" alt="">
+    <img src="assets/img/obrazovka/obrazovka--3.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--4.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--6.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--7.jpg" alt="">
+    <img src="assets/img/obrazovka/obrazovka--8.jpg" alt="">
+    <img src="assets/img/obrazovka/9.jpg" alt="">
+    <img src="assets/img/obrazovka/11.jpg" alt="">
+    <img src="assets/img/obrazovka/10.jpg" alt="">
+    <img src="assets/img/obrazovka/14.jpg" alt="">
+    <img src="assets/img/obrazovka/12.jpg" alt="">
+    <img src="assets/img/obrazovka/barre.jpg" alt="">
+    <img src="assets/img/obrazovka/happy-hours.jpg" alt="">
+  </div>
+
+  <script>
+    (function () {
+      var PRODLEVA = 8000;                    // ms mezi obrázky (stejně jako dřív ve Webflow)
+      var KONTROLA_POLEVEK = 30 * 60 * 1000;  // jak často zjistit, jestli nejsou nové polévky
+      var OBNOVA_STRANKY = 12 * 60 * 60 * 1000; // jednou za 12 h načíst stránku znovu (nové slajdy)
+      var POLEVKY = "assets/img/obrazovka/polevky.jpg";
+
+      var slides = document.querySelectorAll(".slides img");
+      var i = 0;
+      if (slides.length) {
+        slides[0].className = "is-active";
+        if (slides.length > 1) {
+          setInterval(function () {
+            slides[i].className = "";
+            i = (i + 1) % slides.length;
+            slides[i].className = "is-active";
+          }, PRODLEVA);
+        }
+      }
+
+      function hlavicka(url, hotovo) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("HEAD", url + (url.indexOf("?") === -1 ? "?" : "&") + "kontrola=" + new Date().getTime(), true);
+        xhr.onload = function () { if (xhr.status === 200) hotovo(xhr); };
+        xhr.send();
+      }
+
+      // Nový obrázek polévek se vymění, až se na serveru opravdu změní (podle ETag),
+      // a teprve když se celý stáhne – při výpadku internetu zůstane starý.
+      var soup = document.getElementById("polevky");
+      var verze = null;
+      function zkontrolujPolevky() {
+        hlavicka(POLEVKY, function (xhr) {
+          var tag = xhr.getResponseHeader("ETag") || xhr.getResponseHeader("Last-Modified");
+          if (!tag) return;
+          if (verze === null) { verze = tag; return; }
+          if (tag === verze) return;
+          var url = POLEVKY + "?v=" + encodeURIComponent(tag);
+          var nacitany = new Image();
+          nacitany.onload = function () { soup.src = url; verze = tag; };
+          nacitany.src = url;
+        });
+      }
+      if (soup) {
+        zkontrolujPolevky();
+        setInterval(zkontrolujPolevky, KONTROLA_POLEVEK);
+      }
+
+      // Celou stránku obnovit jen tehdy, když je server dostupný (jinak by televize ukázala chybu).
+      setInterval(function () {
+        hlavicka(location.pathname, function () { location.reload(); });
+      }, OBNOVA_STRANKY);
+    })();
+  </script>
+</body>
+</html>
